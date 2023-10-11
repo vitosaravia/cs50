@@ -18,11 +18,11 @@ def main():
 
     if convert(time):
         time_float = convert(time)
-        if time_float >= 7 and time_float <= 8:
+        if 7 <= time_float <= 8:
             print("breakfast time")
-        elif time_float >= 12 and time_float <= 13:
+        elif  12 <= time_float <= 13:
             print("lunch time")
-        elif time_float >= 18 and time_float <= 19:
+        elif 18 <= time_float <= 19:
             print("dinner time")
         else:
             return
