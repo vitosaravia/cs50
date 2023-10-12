@@ -1,4 +1,4 @@
-# cs50
+# cs50 - excercises
 
 "An introduction to programming using Python, a popular language for general-purpose
 programming, data science, web programming, and more.
