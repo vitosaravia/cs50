@@ -12,10 +12,11 @@ def main():
 def convert(phrase):
 
     snake_case = phrase.lower()
-
+    a = 0
     for i, char in enumerate(phrase):
         if char.isupper():
-            snake_case = snake_case[0:i] + "_" + snake_case[i:]
+            snake_case = snake_case[:i+a] + "_" + snake_case[i+a:]
+            a = a + 1
 
     return snake_case
 
