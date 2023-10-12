@@ -9,7 +9,6 @@ def main():
 
     print(f"snake_case: {convert(camelCase)}")
 
-
 def convert(phrase):
 
     snake_case = phrase.lower()
@@ -19,7 +18,6 @@ def convert(phrase):
             snake_case = snake_case[0:i] + "_" + snake_case[i:]
 
     return snake_case
-
 
 if __name__ == "__main__":
     main()
