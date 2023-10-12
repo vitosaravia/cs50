@@ -32,18 +32,14 @@ def is_valid(s):
         if 2 <= len(s) <= 6:
             if s.isdigit():
                 if not s[-1].isdigit() or s[2] == '0':
-                    print(0)
                     return False
                 else:
                     return True
             else:
-                print(2)
                 return False
         else:
-            print(3)
             return False
     else:
-        print(4)
         return False
 
 
