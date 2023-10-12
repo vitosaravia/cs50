@@ -1,7 +1,7 @@
 # cs50
 
-"An introduction to programming using Python, a popular language for general-
-purpose programming, data science, web programming, and more.
+"An introduction to programming using Python, a popular language for general-purpose
+programming, data science, web programming, and more.
 
 An introduction to programming using a language called Python. 
 Learn how to read and write code as well as how to test and 
