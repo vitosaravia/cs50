@@ -9,14 +9,20 @@ is owed. Assume that the user will only input integers, and ignore any integer
 that isn't an accepted denomination.
 """
 
-amound_due = 50
+def main():
 
-while amound_due > 0:
-    print(f"Amount due: {amound_due}")
+    amound_due = 50
 
-    coin = int(input("Insert coin: "))
+    while amound_due > 0:
+        print(f"Amount due: {amound_due}")
 
-    if coin in [25, 10, 5]:
-        amound_due = amound_due - coin
+        coin = int(input("Insert coin: "))
 
-print(f"Change Owed: {amound_due*(-1)}")
+        if coin in [25, 10, 5]:
+            amound_due = amound_due - coin
+
+    print(f"Change Owed: {amound_due*(-1)}")
+
+
+if __name__ == "__main__":
+    main()
