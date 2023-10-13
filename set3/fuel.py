@@ -14,3 +14,39 @@ If, though, X or Y is not an integer, X is greater than Y, or Y is 0, instead
 prompt the user again. (It is not necessary for Y to be 4.) Be sure to catch 
 any exceptions like ValueError or ZeroDivisionError.
 """
+
+def main():
+    fuel = get_fraction()
+    print(f"{fuel}")
+    
+
+    
+def get_fraction():
+    while True:
+        fraction_input = input("Fraction: ")
+        x_y = fraction_input.split("/")
+
+        
+
+        if len(x_y) == 2:
+            try:
+                x = int(x_y[0])
+                y = int(x_y[1])
+                if x <= y:
+                    number = int((x / y)*100)
+                    if number <= 1:
+                        return "E"
+                    elif number >= 99:
+                        return "F"
+                    else:
+                        return f"{number} %"
+            except ValueError:
+                pass
+    
+
+
+    
+
+
+if __name__ == "__main__":
+    main()
