@@ -32,8 +32,8 @@ else:
         print(x * z)
 
     elif y == "/":
-        if z != 0:
+        try:
             print(x / z)
-        else:
+        except ZeroDivisionError:
             print("Expression x/z: z can not be 0")
 
