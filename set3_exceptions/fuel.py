@@ -26,21 +26,22 @@ def get_fraction():
         fraction_input = input("Fraction: ")
         x_y = fraction_input.split("/")
 
-        
-
         if len(x_y) == 2:
             try:
                 x = int(x_y[0])
                 y = int(x_y[1])
+
                 if x <= y:
                     number = int((x / y)*100)
+
                     if number <= 1:
                         return "E"
                     elif number >= 99:
                         return "F"
                     else:
                         return f"{number} %"
-            except ValueError:
+                    
+            except:
                 pass
     
 
