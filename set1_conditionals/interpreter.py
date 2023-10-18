@@ -23,8 +23,7 @@ def main():
         print("Invalid expression")
 
 def interpreter(x,y,z):
-    print(f"{x}{y}{z}")
-    """
+    print(x, y, z)
     match y:
         case "+":
             print(x + z)
@@ -37,7 +36,7 @@ def interpreter(x,y,z):
                 print(x / z)
             except ZeroDivisionError:
                 print("Expression x/z: z can not be 0")
-"""
+
 
 if __name__ == "__main__":
     main()
