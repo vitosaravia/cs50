@@ -13,27 +13,31 @@ Assume that, if y is /, then z will not be 0.
 
 """
 
-expression = input("Expression: ")
+def main():
+    expression = input("Expression: ")
 
-try:
-    x, y, z = expression.split(" ")
-    x = float(x)
-    z = float(z)
-except ValueError:
-    print("Invalid expression")
-else:
-    if y == "+":
-        print(x + z)
+    try:
+        x, y, z = expression.split(" ")
+        interpreter(float(x), y, float(z))
+    except ValueError:
+        print("Invalid expression")
 
-    elif y == "-":
-        print(x - z)
+def interpreter(x,y,z):
+    print(f"{x}{y}{z}")
+    """
+    match y:
+        case "+":
+            print(x + z)
+        case "-":
+            print(x - z)
+        case "*":
+            print(x * z)
+        case "/":
+            try:
+                print(x / z)
+            except ZeroDivisionError:
+                print("Expression x/z: z can not be 0")
+"""
 
-    elif y == "*":
-        print(x * z)
-
-    elif y == "/":
-        try:
-            print(x / z)
-        except ZeroDivisionError:
-            print("Expression x/z: z can not be 0")
-
+if __name__ == "__main__":
+    main()

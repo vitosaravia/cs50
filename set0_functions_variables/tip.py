@@ -1,6 +1,6 @@
 """
-Well, we’ve written most of a tip calculator for you. Unfortunately, 
-we didn’t have time to implement two functions:
+Well, we've written most of a tip calculator for you. Unfortunately, 
+we didn't have time to implement two functions:
 
 dollars_to_float, which should accept a str as input (formatted as $##.##, 
 wherein each # is a decimal digit), remove the leading $, and return the 
@@ -18,11 +18,10 @@ def main():
 
 
 def dollars_to_float(d):
-    if d[0] == "$":
+    if d.startswith("$"):
         d = d[1:]
     try:
-        d = float(d)
-        return d
+        return float(d)
     except ValueError:
         print('Invalid amount format')
 
@@ -31,9 +30,10 @@ def percent_to_float(p):
     if p.endswith('%'):
         p = p[:-1]
     try:
-        p = float(p) / 100
-        return p
+        return float(p) / 100
     except ValueError:
         print('Invalid percentage format')
 
-main()
+
+if __name__ == "__main__":
+    main()

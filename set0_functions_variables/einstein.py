@@ -7,8 +7,10 @@ In a file called einstein.py, implement a program in Python that prompts the use
 as an integer (in kilograms) and then outputs the equivalent number of Joules as an integer. 
 Assume that the user will input an integer.
 """
+
+
 c = 300000000
 m = int(input("Mass (in kilograms): "))
-e = int(m*(c**2))
+e = int(m * c ** 2)
 
 print(e)

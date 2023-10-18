@@ -11,23 +11,57 @@ name ends, case-insensitively, in any of these suffixes:
 .txt
 .zip
 
+If the file’s name ends with some other suffix or has no 
+suffix at all, output application/octet-stream instead, 
+which is a common default.
+
 """
 
-extensions = {
-    "gif": "image", 
-    "jpg": "image", 
-    "jpeg": "image",
-    "png": "image",
-    "pdf": "application", 
-    "txt": "application",
-    "zip": "unknown",
-}
+import os
 
-file_name = (input("File name: ")).lower()
+def main():
+    extensions = {
+        "gif": "image", 
+        "jpg": "image", 
+        "jpeg": "image",
+        "png": "image",
+        "pdf": "application", 
+        "txt": "application",
+        "zip": "unknown",
+    }
 
-file_extension = (file_name.split("."))[-1]
+    file_name = input("File name: ").strip().lower()
 
-if file_extension in extensions.keys():
-    print(f"{extensions[file_extension]}/{file_extension}")
-else:
-    print("application/octet-stream")
+    file_extension = file_name.split(".")[-1]
+
+    if file_extension in extensions.keys():
+        print(f"{extensions[file_extension]}/{file_extension}")
+    else:
+        print("application/octet-stream")
+
+
+def another_way():
+
+    extensions = {
+        "gif": "image", 
+        "jpg": "image", 
+        "jpeg": "image",
+        "png": "image",
+        "pdf": "application", 
+        "txt": "application",
+        "zip": "unknown",
+    }
+
+    file_name = input("File name: ").strip().lower()
+
+    extension = os.path.splitext(file_name)[1][1:]
+
+    if extension in extensions.keys():
+        print(f"{extensions[extension]}/{extension}")
+    else:
+        print("application/octet-stream")
+
+
+if __name__ == "__main__":
+    another_way()
+    #main()

@@ -6,11 +6,11 @@ Ignore any leading whitespace in the user’s greeting, and treat the user’s g
 
 import re
 
-greeting = ((input("Greeting: ")).lower()).strip()
+greeting = (input("Greeting: ").lower()).strip()
 
-if re.search("^hello", greeting):
+if re.match("hello", greeting):
     print("$0")
-elif re.search("^h", greeting):
+elif re.match("h", greeting):
     print("$20")
 else:
     print("$100")
