@@ -15,7 +15,15 @@ Assume that, if y is /, then z will not be 0.
 
 def main():
     expression = input("Expression: ")
+    try:
+        print(eval(expression))
+    except ZeroDivisionError:
+        print("Expression x/z: z can not be 0")
+    except NameError:
+        print("Invalid expression")
 
+def main_0():
+    expression = input("Expression: ")
     try:
         x, y, z = expression.split(" ")
         interpreter(float(x), y, float(z))
@@ -36,7 +44,6 @@ def interpreter(x,y,z):
                 print(x / z)
             except ZeroDivisionError:
                 print("Expression x/z: z can not be 0")
-
 
 if __name__ == "__main__":
     main()

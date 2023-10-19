@@ -13,37 +13,32 @@ instance, given a time like "7:30" (i.e., 7 hours and 30 minutes), convert shoul
 """
 
 def main():
-    
     time = input("What time is it? ")
+    time_float = convert(time)
 
-    if convert(time):
-        time_float = convert(time)
+    if time_float:
         if 7 <= time_float <= 8:
-            print("breakfast time")
+            print("Breakfast time")
         elif  12 <= time_float <= 13:
-            print("lunch time")
+            print("Lunch time")
         elif 18 <= time_float <= 19:
-            print("dinner time")
+            print("Dinner time")
         else:
             return
     else:
         print("Invalid expression")
 
 def convert(time):
-
     try:
         hour, minutes = map(float, time.split(":"))
     except ValueError:
-
-        return False
+        return 0
     
     if hour >= 24 or minutes >= 60:
-
-        return False
+        return 0
 
     else:
         minutes = minutes / 60
-
         time = float(hour + minutes)
 
         return time
