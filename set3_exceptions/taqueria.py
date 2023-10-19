@@ -25,7 +25,6 @@ item on the menu will be titlecased.
 """
 
 def main():
-
     total = 0
     items = {
         "Baja Taco": 4.00,
@@ -39,20 +38,16 @@ def main():
         "Tortilla Salad": 8.00,
         }
 
-
-    try:
-        while True:
+    while True:
+        try:
             add_order = (input("Item: ")).strip().title()
 
             if add_order in items.keys():
                 total = total + items[add_order]
                 print(f"Total: {total}")
-
-    
-    except  EOFError:
-        pass
-
-    print('')
+        except  EOFError:
+            return print('')
+            
 
 if __name__ == "__main__":
     main()

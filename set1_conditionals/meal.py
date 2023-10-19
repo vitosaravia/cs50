@@ -36,11 +36,9 @@ def convert(time):
     
     if hour >= 24 or minutes >= 60:
         return 0
-
     else:
         minutes = minutes / 60
         time = float(hour + minutes)
-
         return time
 
 
