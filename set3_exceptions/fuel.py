@@ -38,8 +38,5 @@ def get_fraction():
             print("Invalid expression")
 
 
-    
-
-
 if __name__ == "__main__":
     main()
