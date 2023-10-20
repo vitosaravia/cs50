@@ -56,7 +56,6 @@ def main():
 
 def take_date():
     date = input("Date: ").strip().lower()
-    #try: 
     if "/" in date:
         date_parts = date.split("/")
         if len(date_parts) > 1:
@@ -65,8 +64,6 @@ def take_date():
     elif "," in date:
         date_parts = date.split(" ")
         return date_parts[0].title(), int(date_parts[1][:-1]), int(date_parts[2])
-    #except NameError:
-     #   print("Invalid Expression")
 
 
 def format_date(month, day, year):
