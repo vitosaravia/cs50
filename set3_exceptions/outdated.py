@@ -46,26 +46,58 @@ output: 1636-09-08
 """
 
 def main():
-    format_date()
-
-def format_date():
     while True:
-        date = input("Date: ").strip().lower()
-        try:
-            date_parts = date.split("/")
-            if date_parts:
-                month, day, year = int(date_parts[0]), int(date_parts[1]), int(date_parts[2])
-            else:
-                date_parts = date.split(" ")
-                month, day, year = int(date_parts[0]), int(date_parts[1][:-1]), int(date_parts[2])
-
-        except:
-            return print("Invalid Expressio")
-        
-        
+        month, day, year = take_date()
+        if format_date(month, day, year):
+            return print(format_date(month, day, year))
+        else:
+            print("Invalid expression")
 
 
+def take_date():
+    date = input("Date: ").strip().lower()
+    #try: 
+    if "/" in date:
+        date_parts = date.split("/")
+        if len(date_parts) > 1:
+            return int(date_parts[0]), int(date_parts[1]), int(date_parts[2])
+        else: print("Invalid Expression")
+    elif "," in date:
+        date_parts = date.split(" ")
+        return date_parts[0].title(), int(date_parts[1][:-1]), int(date_parts[2])
+    #except NameError:
+     #   print("Invalid Expression")
 
+
+def format_date(month, day, year):
+    months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ]
+
+    if isinstance(month, str):
+        if month in months:
+            month = months.index(month) + 1
+        else: return 0
+    
+    if 1 <= eval(str(day)) <= 31 and 1 <= eval(str(month)) <= 12:   
+        if month <10:
+            month = "0" + str(month)
+        if day <10:
+            day = "0" + str(day)
+        return f"{year}-{month}-{day}"
+    else:
+        return 0
 
 if __name__ == "__main__":
     main()

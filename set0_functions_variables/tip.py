@@ -19,10 +19,10 @@ def main():
 
 def dollars_to_float(d):
     if d.startswith("$"):
-    try:
-        return float(d[1:])
-    except ValueError:
-        print('Invalid amount format')
+        try:
+            return float(d[1:])
+        except ValueError:
+            print('Invalid amount format')
 
 
 def percent_to_float(p):
