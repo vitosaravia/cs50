@@ -24,15 +24,36 @@ If the user provides two command-line arguments and the first is not -f or --fon
 or the second is not the name of a font, the program should exit via sys.exit with 
 an error message.
 """
+import sys
+from pyfiglet import Figlet, FigletFont
+import random
 
-from pyfiglet import Figlet
+def main():
+    avaliable_fonts = FigletFont.getFonts()
 
-figlet = Figlet()
+    if 2 < len(sys.argv):
+        if "-f" == sys.argv[1] or "--font" == sys.argv[1]:
+            font = sys.argv[2]
+        else:
+            return sys.exit("Invalid usage")
+    elif len(sys.argv) == 1:
+        font = random.choice(avaliable_fonts)
+    else:
+        return sys.exit("Invalid usage")
 
-figlet.getFonts()
+    if font not in avaliable_fonts:
+        return sys.exit("Invalid usage")
+    else:
+        user_input = input("Input: ").strip().lower()
+        convert(font, user_input)
 
-f, s = 8, 9
+def convert(f, text):
 
-figlet.setFont(font=f)
+    custom_figlet = Figlet(font=f)
 
-print(figlet.renderText(s))
+    ascii_art = custom_figlet.renderText(text)
+
+    return print(ascii_art)
+
+if __name__ == "__main__":
+    main()
