@@ -36,8 +36,12 @@ def main():
     print(f"${_get_price(amount):,.4f}")
 
 def _get_price(amount):
-    data = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json').json()
-    return amount * float((data['bpi']['USD']['rate']).replace(',', ''))
+    data = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    if data.status_code == 200:
+        # Remove the comma and convert to float
+        return amount * float((data.json()['bpi']['USD']['rate']).replace(',', ''))
+    else:
+        sys.exit(f"Error: {data.status_code}")
 
 if __name__ == "__main__":
     main()
