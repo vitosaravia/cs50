@@ -47,7 +47,7 @@ import random
 
 def main():
     level = get_level()
-
+    score = 0
     for _ in range(10):
         a, b = generate_integer(level)
         tries = 0
@@ -61,9 +61,12 @@ def main():
                         print(f"{a} + {b} = {a + b}")
                     tries += 1
                 else:
+                    score += 1
                     tries = 4
             except EOFError:
                 return False
+    
+    print(f"Score: {score}")
         
 def get_level():
     while True:
