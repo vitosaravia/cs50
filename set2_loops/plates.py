@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 In Massachusetts, home to Harvard University, it's possible to request a vanity 
 license plate for your car, with your choice of letters and numbers instead of 
@@ -28,18 +30,32 @@ def main():
 
 
 def is_valid(s):
+    #Start with 2 letters
     if s[:2].isalpha():
+
+        #max and min of characters
         if 2 <= len(s) <= 6:
-            if s.isdigit():
-                if not s[-1].isdigit() or s[2] == '0':
-                    return False
-                else:
+
+            #Return True if all characters in the string are alphanumeric 
+            # and there is at least one character, False otherwise
+            if s.isalnum():
+                
+                # Check if the last character is a number and the first number 
+                # is not '0'
+                if s[-1].isnumeric() and s[2].isdigit() and s[2] != '0':
+                    
                     return True
+                else:
+                    print(1)
+                    return False
             else:
+                print(2)
                 return False
         else:
+            print(3)
             return False
     else:
+        print(4)
         return False
 
 
