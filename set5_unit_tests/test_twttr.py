@@ -22,7 +22,7 @@ def main():
     user_input = input("Input: ")
     remove_vowels(user_input)
 
-    print(f"Output: {remove_vowels(user_input)}")
+    print("Output: ", remove_vowels(user_input))
 
 if __name__ == "__main__":
     main()
