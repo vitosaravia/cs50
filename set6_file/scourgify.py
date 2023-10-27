@@ -49,8 +49,7 @@ def main():
             writer.writerows(output_data)
 
     except FileNotFoundError:
-        print(f"File not found: {input_file}")
-        sys.exit(1)
+        sys.exit(f"File not found: {input_file}")
 
 
 
