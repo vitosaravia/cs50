@@ -13,6 +13,7 @@ cannot be read, the program should exit via sys.exit with an error message."""
 
 import csv
 import sys
+import os
 
 def main():
     if len(sys.argv) < 3:
@@ -25,7 +26,7 @@ def main():
 
     output_data = []
 
-    if not input_file.endswith('.csv') or not output_file.endswith('.csv'):
+    if os.path.splitext(input_file)[1][1:] != 'csv' or os.path.splitext(output_file)[1][1:] != 'csv':
         sys.exit('Invalid file')
 
     try:
