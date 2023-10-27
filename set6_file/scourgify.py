@@ -15,7 +15,6 @@ import csv
 import sys
 
 def main():
-    # Check if the user provided two command-line arguments
     if len(sys.argv) < 3:
         sys.exit("Too few command-line arguments.")
     elif len(sys.argv) > 3:
@@ -32,9 +31,6 @@ def main():
     try:
         with open(input_file, 'r', newline='') as csvfile:
             reader = csv.reader(csvfile, delimiter = ',', quotechar = '"')
-
-            #if len(data[0]) < 2:
-             #   sys.exit("Input CSV must have at least two columns: name and house")
 
             for i, row in enumerate(reader):
                 
