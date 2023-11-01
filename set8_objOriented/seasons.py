@@ -11,9 +11,24 @@ the program at noon, assume that it's actually midnight, on
 the same date. Use datetime.date.today to get today's date, 
 per docs.python.org/3/library/datetime.html#datetime.date.today."""
 
+import sys
+import inflect
+from datetime import date, datetime
 
 def main():
-    ...
+    print(minutes(input("Date of Birth (YYYY-MM-DD): ").strip()))
+
+def minutes(birth_date):
+
+    try: birth_date = datetime.strptime(birth_date, '%Y-%m-%d')
+    except: sys.exit("Invalid date")
+
+    age = datetime.today() - birth_date
+
+    age = int(age.total_seconds() // 60)
+
+    return inflect.engine().number_to_words(age)
+
 
 if __name__ == "__main__":
     main()
